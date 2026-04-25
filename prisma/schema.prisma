@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//////////////////////////
+// 🛍️ PRODUTOS
+//////////////////////////
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  price       Decimal  @db.Decimal(10, 2)
+  handmade    Boolean  @default(true)
+  materials   String?
+  stock       Int      @default(0)
+  youtubeUrl  String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  colors      ProductColor[]
+  sizes       Size[]
+  categories  Category[] @relation("ProductCategories")
+  images      ProductImage[]
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  url       String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  createdAt DateTime @default(now())
+}
+
+model ProductColor {
+  id        String   @id @default(cuid())
+  name      String
+  hex       String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+}
+
+model Size {
+  id        String   @id @default(uuid())
+  name      String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+
+  products  Product[] @relation("ProductCategories")
+}
+
+//////////////////////////
+// 📦 PEDIDOS
+//////////////////////////
+
+model Order {
+  id               String   @id @default(cuid())
+  fullName         String
+  email            String
+  cpf              String
+  phone            String
+  address          Json
+  frete            Decimal? @db.Decimal(10, 2)
+  total            Decimal  @db.Decimal(10, 2)
+  statusPagamento  String?
+  customerId       String?  // Asaas Customer ID
+  createdAt        DateTime @default(now())
+
+  items            OrderItem[]
+}
+
+model OrderItem {
+  id         String   @id @default(cuid())
+  orderId    String
+  order      Order    @relation(fields: [orderId], references: [id])
+  productId  String
+  name       String
+  quantity   Int
+  price      Decimal  @db.Decimal(10, 2)
+  size       String
+  color      String
+}
+
+//////////////////////////
+// 🔐 ADMIN
+//////////////////////////
+
+model AdminUser {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  passwordHash String
+  role         String      @default("admin")
+  createdAt    DateTime    @default(now())
+  logs         AccessLog[]
+}
+
+model Client {
+  id             String   @id @default(cuid())
+  name           String
+  email          String   @unique
+  cpfCnpj        String?
+  phone          String?
+  asaasAccountId String?
+  asaasWalletId  String?
+  createdAt      DateTime @default(now())
+}
+
+model AccessLog {
+  id        String      @id @default(cuid())
+  userId    String?
+  user      AdminUser?  @relation(fields: [userId], references: [id])
+  action    String
+  route     String?
+  ip        String?
+  createdAt DateTime    @default(now())
+}
+
+//////////////////////////
+// 📝 BLOG
+//////////////////////////
+
+model BlogCategory {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  image       String?
+
+  showOnHome  Boolean  @default(false) // aparece na home
+  featured    Boolean  @default(false) // destaque (ex: topo)
+  order       Int?     // ordenação manual
+
+  posts       Post[]
+
+  createdAt   DateTime @default(now())   // ✅ ADD
+  updatedAt   DateTime @updatedAt        // ✅ ADD
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String
+  excerpt     String?
+  coverImage  String?
+
+  published   Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categoryId  String?
+  category    BlogCategory? @relation(fields: [categoryId], references: [id])
+
+  seo         PostSEO?
+}
+
+model PostSEO {
+  id          String   @id @default(cuid())
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId      String   @unique
+
+  metaTitle   String?
+  metaDesc    String?
+  keywords    String?
+}
+
+model CustomPage {
+  id        String @id @default(cuid())
+
+  slug      String   // "sobre" | "personalizados"
+  title     String
+
+  // SOBRE
+  introText String?
+  section1Title String?
+  section1Text  String?
+
+  // FAQ PERSONALIZADOS
+  faq       Json?
+
+  coverImage String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([slug])
+}
