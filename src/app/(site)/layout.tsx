@@ -81,27 +81,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <style dangerouslySetInnerHTML={{ __html: buildCssVariables(siteConfig.theme) }} />
       </head>
       <body
-        className={`antialiased bg-[#0B0B0B] text-[#EADCC6] overflow-x-hidden`}
+        className="antialiased overflow-x-hidden"
+        style={{                                    
+          backgroundColor: 'var(--color-bg-primary)',
+          color: 'var(--color-text-primary)',
+        }}
       >
         <Toaster position="top-right" reverseOrder={false} />
-
         <CartProvider>
           <div className="flex flex-col min-h-screen">
-
-            {/* HEADER */}
             <Header />
-
-            {/* CONTEÚDO */}
-            <main className="flex-1 w-full pt-20 bg-black">
+            <main
+              className="flex-1 w-full pt-20"
+              style={{ backgroundColor: 'var(--color-bg-primary)' }}>
               {children}
             </main>
-
-            {/* FOOTER */}
             <Footer />
-
           </div>
         </CartProvider>
       </body>
     </html>
-  );
+  )
 }

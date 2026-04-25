@@ -69,24 +69,24 @@ export const siteConfig = {
     },
 
   // ─── TEMA VISUAL ────────────────────────────────────────
-  theme: {
+ theme: {
     bgPrimary:       "#000000",
     bgSecondary:     "#0B0B0B",
     bgTertiary:      "#111111",
     bgCard:          "#1a1a1a",
     bgHover:         "#222222",
-    overlay:         "#0A0A0F",   // hero overlay
+    overlay:         "#0A0A0F",
 
-    textPrimary:     "#EADCC6",
-    textSecondary:   "#D6C7A8",
-    textTertiary:    "#B8A98A",
-    textMuted:       "#9ca3af",   // gray-400
+    textPrimary:     "#ffffff",    
+    textSecondary:   "#e2e8f0",   
+    textTertiary:    "#94a3b8",   
+    textMuted:       "#9ca3af",
     textLight:       "#ffffff",
-    textHeroMuted:   "#d1d5db",   // gray-300
+    textHeroMuted:   "#d1d5db",
 
     accent:          "#6C63FF",
     accentHover:     "#5A52E0",
-    accentLight:     "#A78BFA",   // texto hover, destaques
+    accentLight:     "#A78BFA",
 
     error:           "#dc2626",
     success:         "#16a34a",
@@ -96,8 +96,8 @@ export const siteConfig = {
     borderLight:     "#444444",
 
     adminBg:         "#1a1a1a",
-    adminText:       "#EADCC6",
+    adminText:       "#ffffff",   
     adminBorder:     "#333333",
-  },
+},
 
 }

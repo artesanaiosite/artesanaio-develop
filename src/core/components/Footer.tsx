@@ -12,27 +12,24 @@ export default function Footer() {
     <footer className="w-full">
 
       {/* BENEFÍCIOS */}
-      <div
-        className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 py-16 text-center px-4"
-        style={{
-          backgroundColor: 'var(--color-bg-tertiary)',
-          borderTop: '1px solid var(--color-bg-card)',
-        }}
-      >
-        {siteConfig.benefits.map((benefit, index) => (
-          <div key={index}>
-            <h4
-              className="font-semibold text-lg"
-              style={{ color: 'var(--color-text-primary)' }}
-            >
-              {benefit.title}
-            </h4>
-            <p className="text-sm" style={{ color: 'var(--color-text-tertiary)' }}>
-              {benefit.description}
-            </p>
-          </div>
-        ))}
-      </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 py-16 bg-[var(--color-bg-tertiary)] text-center px-4 border-t border-[var(--color-bg-card)]">
+      
+              <div>
+                <h4 className="font-semibold text-lg text-[var(--color-text-primary)]">Feito à Mão</h4>
+                <p className="text-sm text-[var(--color-text-tertiary)]">Cada peça com cuidado artesanal</p>
+              </div>
+      
+              <div>
+                <h4 className="font-semibold text-lg text-[var(--color-text-primary)]">Peças Exclusivas</h4>
+                <p className="text-sm text-[var(--color-text-tertiary)]">Produção sob encomenda</p>
+              </div>
+      
+              <div>
+                <h4 className="font-semibold text-lg text-[var(--color-text-primary)]">Entrega no Brasil</h4>
+                <p className="text-sm text-[var(--color-text-tertiary)]">Envios para todo o país</p>
+              </div>
+      
+            </div>
 
       {/* FOOTER PRINCIPAL */}
       <div
