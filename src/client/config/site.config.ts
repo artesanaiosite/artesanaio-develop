@@ -29,6 +29,8 @@ export const siteConfig = {
     { label: "Início",   href: "/" },
     { label: "Sobre",    href: "/sobre" },
     { label: "Loja",     href: "/loja" },
+    { label: "Blog",     href: "/blog" },
+    { label: "Contato",  href: "/contato" },
   ],
 
   // Navegação mobile
