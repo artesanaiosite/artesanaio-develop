@@ -5,13 +5,13 @@ export const siteConfig = {
   nome: "Nome do Negócio",
 
   // Logo
-  logoHorizontal: "/logo-horizontal.png",
-  logoVertical: "/logo-vertical.png",
-  logoAlt: "Logo do negócio",
+  logoHorizontal: "/logo-artesanaio-horizontal.png",
+  logoVertical: "/logo-artesanaio.jpeg",
+  logoAlt: "Logo da Artesanaio",
 
   // WhatsApp
-  whatsapp: "5521999999999",
-  whatsappDisplay: "(21) 99999-9999",
+  whatsapp: "5521986369426",
+  whatsappDisplay: "(21) 98636-9426",
   whatsappMensagem: "Olá! Vim pelo site e gostaria de mais informações.",
 
   // Header
@@ -22,7 +22,7 @@ export const siteConfig = {
   facebook: "",
   tiktok: "",
 
-  cidade: "Cidade, Estado",
+  cidade: "Nilopolis, Rio de Janeiro",
 
   // Navegação desktop
   navLinks: [
@@ -30,7 +30,7 @@ export const siteConfig = {
     { label: "Sobre",    href: "/sobre" },
     { label: "Loja",     href: "/loja" },
     { label: "Blog",     href: "/blog" },
-    { label: "Contato",  href: "/contato" },
+    { label: "Contato",  href: "https://wa.me/5521986369426" },
   ],
 
   // Navegação mobile
@@ -39,7 +39,7 @@ export const siteConfig = {
     { label: "Sobre",    href: "/sobre" },
     { label: "Loja",     href: "/loja" },
     { label: "Carrinho", href: "/loja/carrinho" },
-    { label: "Contato",  href: "/contato" },
+    { label: "Contato",  href: "https://wa.me/5521986369426" },
   ],
 
   // Footer — benefícios
@@ -53,53 +53,64 @@ export const siteConfig = {
   footerNavLinks: [
     { label: "Início",  href: "/" },
     { label: "Sobre",   href: "/sobre" },
-    { label: "Contato", href: "/contato" },
+    { label: "Blog",    href: "/blog" },
+    { label: "Loja",    href: "/loja" },
+    { label: "Contato", href: "https://wa.me/5521986369426" },
   ],
+footerDescription:
+    'Artesanato feito à mão com carinho e atenção aos detalhes. Pulseiras de miçanga, macramê, toalhas bordadas e presentes personalizados.',
 
-  footerDescription: "Descrição do seu negócio aqui.",
-  copyrightTagline: "",
+  copyrightTagline:
+    '© 2026 Artesanaio — Artesanato feito à mão',
 
-    seo: {
-    titulo: "Nome do Negócio – Slogan curto",
-    descricao: "Descrição do negócio...",
-    url: "https://www.seudominio.com.br",
-    ogImage: "/og-image.png",        // ← adicionar
-    keywords: [                       // ← adicionar
-        "palavra-chave 1",
-        "palavra-chave 2",
+  seo: {
+    titulo: 'Artesanaio – Artesanato feito à mão no Rio de Janeiro',
+    descricao:
+      'Pulseiras de miçanga, macramê artesanal, toalhas bordadas e presentes artesanais feitos à mão no Rio de Janeiro. Peças únicas e personalizadas, com atendimento direto pelo WhatsApp.',
+    url: 'https://artesanaio.com.br',
+    ogImage: '/og-artesanaio.png',
+    keywords: [
+      'artesanato',
+      'pulseiras de miçanga',
+      'macramê artesanal',
+      'presentes artesanais',
+      'acessórios feitos à mão',
+      'Artesanaio',
+      'Rio de Janeiro',
+      'whatsapp artesanato',
     ],
-    },
+  },
 
-  // ─── TEMA VISUAL ────────────────────────────────────────
  theme: {
-    bgPrimary:       "#000000",
-    bgSecondary:     "#0B0B0B",
-    bgTertiary:      "#111111",
-    bgCard:          "#1a1a1a",
-    bgHover:         "#222222",
-    overlay:         "#0A0A0F",
+  bgPrimary:       "#F5F1EB",  // fundo principal (bege claro)
+  bgSecondary:     "#E7DED2",  // seções alternadas
+  bgTertiary:      "#D6C7B5",  // blocos de destaque
+  bgCard:          "#FFFFFF",  // cards brancos (como no site atual)
+  bgHover:         "#EFE7DC",
+  overlay:         "#00000020",
 
-    textPrimary:     "#ffffff",    
-    textSecondary:   "#e2e8f0",   
-    textTertiary:    "#94a3b8",   
-    textMuted:       "#9ca3af",
-    textLight:       "#ffffff",
-    textHeroMuted:   "#d1d5db",
+  textPrimary:     "#3E2C23",  // marrom escuro (títulos)
+  textSecondary:   "#5C4033",  // marrom médio
+  textTertiary:    "#7A5C4A",  
+  textMuted:       "#9C7C65",
+  textLight:       "#FFFFFF",
+  textHeroMuted:   "#6B4F3A",
 
-    accent:          "#6C63FF",
-    accentHover:     "#5A52E0",
-    accentLight:     "#A78BFA",
+  // 🎯 CORES PRINCIPAIS DO CLIENTE
+  accent:          "#8B5E3C",  // marrom principal
+  accentHover:     "#6F4A2F",
+  accentLight:     "#C8A27A",  // dourado/bege
 
-    error:           "#dc2626",
-    success:         "#16a34a",
-    info:            "#6C63FF",
+  // botão WhatsApp (mantido fiel ao cliente)
+  success:         "#2F7D57",
+  error:           "#dc2626",
+  info:            "#8B5E3C",
 
-    border:          "#333333",
-    borderLight:     "#444444",
+  border:          "#D6C7B5",
+  borderLight:     "#E7DED2",
 
-    adminBg:         "#1a1a1a",
-    adminText:       "#ffffff",   
-    adminBorder:     "#333333",
-},
-
+  adminBg:         "#F5F1EB",
+  adminText:       "#3E2C23",
+  adminBorder:     "#D6C7B5",
+}
 }

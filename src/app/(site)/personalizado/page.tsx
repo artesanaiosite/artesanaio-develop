@@ -9,7 +9,7 @@ type FAQItem = {
 async function getPage() {
   return prisma.customPage.findUnique({
     where: {
-        slug: "personalizados"
+        slug: "personalizado"
     }
   })
 }
