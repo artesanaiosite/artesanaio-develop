@@ -9,6 +9,7 @@
     "lint": "next lint",
     "seed": "tsx prisma/seed.ts",
     "seedb": "tsx prisma/seedblog.ts",
+    "seeda": "tsx prisma/seedAdmin.ts",
     "seedp": "tsx prisma/seedProdutos.ts"
   },
   "dependencies": {
