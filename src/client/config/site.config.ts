@@ -111,7 +111,7 @@ footerDescription:
   overlay:         "#00000020",
 
   textPrimary:     "#3E2C23",  // marrom escuro (títulos)
-  textSecondary:   "#5C4033",  // marrom médio
+  textSecondary:   "#5C4033",  
   textTertiary:    "#7A5C4A",  
   textMuted:       "#9C7C65",
   textLight:       "#FFFFFF",
