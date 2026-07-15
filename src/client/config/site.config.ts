@@ -81,6 +81,27 @@ footerDescription:
     ],
   },
 
+   // ─── Instalação Off-Line do site no tablet ────────────────────────────────────────
+  pwa: {
+  enabled: true,
+
+  shortName: "Artesanaio",
+
+  orientation: "any" as const,
+
+  icon192: "/pwa/icon-192.png",
+  icon512: "/pwa/icon-512.png",
+  maskableIcon512: "/pwa/icon-maskable-512.png",
+  appleTouchIcon: "/pwa/apple-touch-icon.png",
+
+  offlineRoutes: [
+    "/",
+    "/sobre",
+    "/loja",
+    "/blog",
+  ],
+},
+
  theme: {
   bgPrimary:       "#F5F1EB",  // fundo principal (bege claro)
   bgSecondary:     "#E7DED2",  // seções alternadas
